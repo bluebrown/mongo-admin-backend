@@ -1,0 +1,16 @@
+# POST http://localhost:7020/query/admin HTTP/1.1
+# content-type: application/json
+
+# {
+#     "method": "listCollections",
+#     "args": []
+# }
+
+
+
+
+POST http://localhost:7020/api/v0/load HTTP/1.1
+content-type: application/x-www-form-urlencoded
+
+print('hi')
+
