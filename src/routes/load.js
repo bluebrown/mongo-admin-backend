@@ -1,5 +1,5 @@
 // const parse = require('mongodb-query-parser');
-const { user, password } = require('../.auth.json');
+const { user, password } = require('../../.auth.json');
 const { createWriteStream } = require('fs');
 const { promisify } = require('util');
 const { exec } = require('child_process');

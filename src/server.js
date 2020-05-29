@@ -1,5 +1,6 @@
 const fastify = require('fastify')({ logger: true })
-const {user, password} = require('./.auth.json')
+const {user, password} = require('../.auth.json')
+const path = require('path')
 
 fastify.register(require('fastify-cors'), { 
   origin: 'http://localhost:5000'
@@ -22,8 +23,11 @@ fastify.register(require('./plugins/mongo'), {
 
 fastify.register(require('./plugins/socket'))
 
+fastify.register(require('fastify-static'), {
+  root: path.join(__dirname, '..', 'public'),
+})
+
 const opts = { prefix: '/api/v0' }
-fastify.register(require('./routes/example'))
 fastify.register(require('./routes/query'), opts)
 fastify.register(require('./routes/load'), opts)
 fastify.register(require('./routes/socket'), opts)

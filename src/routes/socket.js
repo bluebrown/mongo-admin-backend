@@ -1,5 +1,5 @@
 const ss = require('socket.io-stream')
-const {user, password} = require('../.auth.json')
+const {user, password} = require('../../.auth.json')
 
 module.exports = async function (fastify, options) {
   fastify.socket.on('connection', (socket) => {
